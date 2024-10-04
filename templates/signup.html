@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}"> <!-- Adjust this as per your sign-up styles -->
+<!-- </head>
+<body> -->
+
+<!-- Sign up form here -->
+
+<!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> --> 
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .signin-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .signin-container h1 {
+            color: #1877f2;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .signin-container label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .signin-container input[type="email"],
+        .signin-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .signin-container button {
+            background-color: #1877f2;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .signin-container button:hover {
+            background-color: #155bcb;
+        }
+        .signin-container ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            color: #d9534f;
+        }
+        .signin-container ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+    <h1>Sign Up Form</h1>
+    <form action="{{ url_for('signup') }}" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Sign Up</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+</body>
+</html>
+
